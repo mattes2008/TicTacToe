@@ -33,7 +33,29 @@ function checkForWin (src) {
         } else if (winningPoints2===3) {
             return "sp2"
         } else if (i===data.winning.length-1) {
+            let remis = checkForRemis(src)
+            if (remis) {
+                return "remis"
+            } else {
+                return false
+            }
+        }
+
+    }
+
+}
+
+
+
+
+function checkForRemis (src) {
+
+    for (let i=0; i<src.length; i++) {
+
+        if (src[i]==="-") {
             return false
+        } else if (i===src.length-1) {
+            return true
         }
 
     }
