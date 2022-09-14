@@ -61,3 +61,22 @@ function checkForRemis (src) {
     }
 
 }
+
+
+
+
+function choseField (element, player) {
+
+    if (player==="sp1") {
+
+        element.innerHTML = "X"
+        element.setAttribute ("style", "color: red;")
+
+    } else if (player==="sp2") {
+
+        element.innerHTML = "O"
+        element.setAttribute ("style", "color: blue;")
+
+    }
+
+}
