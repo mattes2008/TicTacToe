@@ -1,0 +1,25 @@
+body {
+
+    background-color: blue;
+    font-family: "Arial";
+    text-align: center;
+    color: white;
+
+}
+
+
+
+
+td {
+
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 200px;
+
+}
+
+
