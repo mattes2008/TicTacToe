@@ -4,12 +4,25 @@
 
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="storage/favicon.png">
+    <title>Tic Tac Toe</title>
 
 </head>
 
-<body onload="bodyOnLoad ()">
+<body onload="bodyOnLoad()">
 
-<table>
+<header>
+    <h1>XOX&nbsp;&nbsp;-&nbsp;&nbsp;Tic Tac Toe</h1>
+</header>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table style="margin: 0em 0em 0em 23%">
 
     <tr>
 
@@ -36,6 +49,91 @@
     </tr>
 
 </table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div id="display" style="background-color: red; border: thin solid #7F0000;" class="display">
+
+    <p id="displayText" class="displayText"><b>X</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;player 1, it's your turn!</p>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<button onclick="restart ()" style="background-color: red; color: white;">Restart</button>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="heading" onclick="hideSettings ()">
+    <h2>&nbsp;&nbsp;Settings</h2>
+</div>
+
+<div class="hidden" id="settings" style="text-align: left; padding-left: 10px;">
+
+    <br/>
+    <br/>
+
+    <input id="nameInput1" placeholder=" Enter name of player 1 ...">
+
+    <br/>
+    <br/>
+
+    <select id="modeInput1">
+        <option value="player">Player</option>
+        <option value="ai">AI</option>
+
+    </select>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <input id="nameInput2" placeholder=" Enter name of player 2 ...">
+
+    <br/>
+    <br/>
+
+    <select id="modeInput2">
+        <option value="player">Player</option>
+        <option value="ai">AI</option>
+
+    </select>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <button onclick="selectSettings ()" style="background-color: blue; color: white;">Select</button>
+
+    <br/>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<hr/>
+<p>GitHub:</p>
+<a href="https://github.com/mattes2008" target="blank">mattes2008</a>
+<br/>
+<br/>
+<hr/>
+<br/>
+<br/>
 
 </body>
 

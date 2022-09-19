@@ -1,6 +1,6 @@
 body {
 
-    background-color: blue;
+    background-color: #00C4FF;
     font-family: "Arial";
     text-align: center;
     color: white;
@@ -23,3 +23,60 @@ td {
 }
 
 
+.display {
+
+	background-color: #444444;
+	border: thin solid #333333;
+	color: white;
+	width: 1500px;
+	margin-left: 4.5%;
+
+}
+
+
+.displayText {
+
+	font-size: 50px;
+
+}
+
+
+.heading {
+
+	text-align: left;
+	background-color: blue;
+
+}
+
+
+.hidden {
+
+	display: none;
+	visibility: hidden
+
+}
+
+
+button, input, select {
+
+	height: 30px;
+	width: 500px;
+	color: black;
+	background-color: white;
+
+}
+
+
+header {
+
+    background-color: blue;
+    color: white;
+    font-family: "Arial";
+    text-align: left;
+    font-weight: bold;
+    border: thin solid blue;
+    font-size: 100%;
+    margin: 0em 0em 0em 0em;
+    padding-left: 30px;
+
+}
