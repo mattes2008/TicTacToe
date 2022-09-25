@@ -21,19 +21,6 @@ let data = {
 
 
 
-function bodyOnLoad () {
-
-    for (let i=0; i<data.elements.length; i++) {
-
-        data.elements[i].setAttribute("onclick", "playerChose (this)")
-
-    }
-
-}
-
-
-
-
 function checkForWin (src) {
 
     src = src.split("")

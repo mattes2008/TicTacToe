@@ -3,6 +3,19 @@
 <head>
 
     <script src="js/scripts.js"></script>
+    <script>
+
+        function bodyOnLoad () {
+
+            for (let i=0; i<data.elements.length; i++) {
+
+                data.elements[i].setAttribute("onclick", "playerChose (this)")
+
+            }
+
+        }
+
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe</title>
 
