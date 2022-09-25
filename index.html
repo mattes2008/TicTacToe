@@ -3,25 +3,12 @@
 <head>
 
     <script src="js/scripts.js"></script>
-    <script>
-
-        function bodyOnLoad () {
-
-            for (let i=0; i<data.elements.length; i++) {
-
-                data.elements[i].setAttribute("onclick", "playerChose (this)")
-
-            }
-
-        }
-
-    </script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe</title>
 
 </head>
 
-<body onload="bodyOnLoad ()">
+<body>
 
 <header>
     <h1>XOX&nbsp;&nbsp;-&nbsp;&nbsp;Tic Tac Toe</h1>
@@ -38,25 +25,25 @@
 
     <tr>
 
-        <td class="field"></td>
-        <td class="field"></td>
-        <td class="field"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
 
     </tr>
 
     <tr>
 
-        <td class="field"></td>
-        <td class="field"></td>
-        <td class="field"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
 
     </tr>
 
     <tr>
 
-        <td class="field"></td>
-        <td class="field"></td>
-        <td class="field"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)"></td>
 
     </tr>
 
