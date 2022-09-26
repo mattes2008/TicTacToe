@@ -18,7 +18,7 @@ let data = {
     },
     sp2: {
 
-    	mode: "ai",
+    	mode: "player",
     	name: "player 2",
     	ai: {
 
