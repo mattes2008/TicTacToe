@@ -7,12 +7,26 @@ let data = {
 
     	mode: "player",
     	name: "player 1",
+    	ai: {
+
+    		random: true,
+    		offensive: false,
+    		defensive: false,
+
+    	}
 
     },
     sp2: {
 
-    	mode: "player",
+    	mode: "ai",
     	name: "player 2",
+    	ai: {
+
+    		random: true,
+    		offensive: false,
+    		defensive: false,
+
+    	}
 
     },
 
@@ -62,6 +76,7 @@ function checkForWin (src) {
             return "sp1"
 
         } else if (winningPoints2===3) {
+
             for (let i3=0; i3<3; i3++) {
 
                 data.elements[data.winning[i][i3]].setAttribute ("style", "background-color: yellow;")
@@ -124,7 +139,10 @@ function choseField (element, player) {
         element.setAttribute("onclick", "")
         document.getElementById("displayText").innerHTML = "<b>O</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;" + data.sp2.name + ", it's your turn!"
 		document.getElementById("display").setAttribute ("style", "background-color: blue; border: thin solid #00007F;")
-        parseField()
+        let a = parseField()
+        if (!a) {
+        	aiMove()
+        }
 
     } else if (player==="sp2") {
 
@@ -134,8 +152,10 @@ function choseField (element, player) {
         element.setAttribute("onclick", "")
         document.getElementById("displayText").innerHTML = "<b>X</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;" + data.sp1.name + ", it's your turn!"
 		document.getElementById("display").setAttribute ("style", "background-color: red; border: thin solid #7F0000;")
-        parseField()
-
+        let a = parseField()
+		if (!a) {
+        	aiMove()
+        }
     }
 
 }
@@ -174,7 +194,8 @@ function parseField () {
 
 	}
 
-	checkForWin (str)
+	let a = checkForWin (str)
+	return a
 
 }
 
@@ -208,6 +229,61 @@ function selectSettings () {
 	data.sp1.mode = document.getElementById("modeInput1").value
 	data.sp2.mode = document.getElementById("modeInput2").value
 
+	let a = document.getElementById("aiInput1").value
+	let b = document.getElementById("aiInput2").value
+
+	if (a==="random") {
+
+		data.sp1.ai.random = true
+		data.sp1.ai.offensive = false
+		data.sp1.ai.defensive = false
+
+	} else if (a==="off") {
+
+		data.sp1.ai.random = true
+		data.sp1.ai.offensive = true
+		data.sp1.ai.defensive = false
+
+	} else if (a==="def") {
+
+		data.sp1.ai.random = true
+		data.sp1.ai.offensive = false
+		data.sp1.ai.defensive = true
+
+	} else if (a==="med") {
+
+		data.sp1.ai.random = true
+		data.sp1.ai.offensive = true
+		data.sp1.ai.defensive = true
+
+	}
+
+	if (b==="random") {
+
+		data.sp2.ai.random = true
+		data.sp2.ai.offensive = false
+		data.sp2.ai.defensive = false
+
+	} else if (b==="off") {
+
+		data.sp2.ai.random = true
+		data.sp2.ai.offensive = true
+		data.sp2.ai.defensive = false
+
+	} else if (b==="def") {
+
+		data.sp2.ai.random = true
+		data.sp2.ai.offensive = false
+		data.sp2.ai.defensive = true
+
+	} else if (b==="med") {
+
+		data.sp2.ai.random = true
+		data.sp2.ai.offensive = true
+		data.sp2.ai.defensive = true
+
+	}
+
 }
 
 
@@ -227,5 +303,25 @@ function restart () {
 
 	document.getElementById("displayText").innerHTML = "<b>X</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;" + data.sp1.name + ", it's your turn!"
 	document.getElementById("display").setAttribute ("style", "background-color: red; border: thin solid #7F0000;")
+	aiMove ()
+
+}
+
+
+
+
+function hideAIInputs () {
+
+	if (document.getElementById("modeInput1").value==="player") {
+		document.getElementById("aiInput1").classList.add("hidden")
+	} else {
+		document.getElementById("aiInput1").classList.remove("hidden")
+	}
+
+	if (document.getElementById("modeInput2").value==="player") {
+		document.getElementById("aiInput2").classList.add("hidden")
+	} else {
+		document.getElementById("aiInput2").classList.remove("hidden")
+	}
 
 }

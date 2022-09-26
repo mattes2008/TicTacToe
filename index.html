@@ -3,6 +3,7 @@
 <head>
 
     <script src="js/scripts.js"></script>
+    <script src="js/ai.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe</title>
 
@@ -33,8 +34,8 @@
 
     <tr>
 
-        <td class="field" onclick="playerChose (this)"></td>
-        <td class="field" onclick="playerChose (this)"></td>
+        <td class="field" onclick="playerChose (this)">X</td>
+        <td class="field" onclick="playerChose (this)">X</td>
         <td class="field" onclick="playerChose (this)"></td>
 
     </tr>
@@ -88,9 +89,20 @@
     <br/>
     <br/>
 
-    <select id="modeInput1">
+    <select id="modeInput1" onchange="hideAIInputs ()">
         <option value="player">Player</option>
         <option value="ai">AI</option>
+
+    </select>
+
+    <br/>
+    <br/>
+
+    <select class="hidden" style="width: 200px;" id="aiInput1">
+        <option value="random">Random [*]</option>
+        <option value="off">Offensive [**]</option>
+        <option value="def">Defensive [**]</option>
+        <option value="med">Balanced [***]</option>
 
     </select>
 
@@ -103,9 +115,20 @@
     <br/>
     <br/>
 
-    <select id="modeInput2">
+    <select id="modeInput2" onchange="hideAIInputs ()">
         <option value="player">Player</option>
         <option value="ai">AI</option>
+
+    </select>
+
+    <br/>
+    <br/>
+
+    <select class="hidden" style="width: 200px;" id="aiInput2">
+        <option value="random">Random [*]</option>
+        <option value="off">Offensive [**]</option>
+        <option value="def">Defensive [**]</option>
+        <option value="med">Balanced [***]</option>
 
     </select>
 
