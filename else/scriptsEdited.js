@@ -7,9 +7,17 @@ let data = {
 
 
 
-function checkForWin(src) {
+function checkForWinIndex(src) {
 
     src = src.split("")
+
+    if (checkForInvalid(src)) {
+    	//return "invalid"
+    	throw new Error("invalid state")
+    }
+
+    let winsX = 0
+    let winsO = 0
 
     for (let i=0; i<data.winning.length; i++) {
 
@@ -30,10 +38,28 @@ function checkForWin(src) {
 
         if (winningPoints1===3) {
             return "x"
+            winsX++
         } else if (winningPoints2===3) {
             return "o"
+            winsO++
         } else if (i===data.winning.length-1) {
-            throw new Error("invalid state")
+
+            if (winsX>1) {
+            	winsX = 1
+            }
+
+            if (winsO>1) {
+            	winsO = 1
+            }
+
+            if ((winsX+winsO)>1) {
+				//return "invalid"
+				throw new Error("invalid state")
+            } else if (checkForRemis(src)){
+				return "remis"
+			} else {
+				throw new Error("no winner found")
+			}
         }
 
     }
@@ -41,9 +67,10 @@ function checkForWin(src) {
 }
 
 
-function checkForWinWrapper(src) {
+function checkForWin(src) {
     try {
-        checkForWin(src);
+    	let a = checkForWinIndex(src);
+    	return a
     }
     catch (err) {
         console.error(err.message)
@@ -53,8 +80,6 @@ function checkForWinWrapper(src) {
 
 
 function checkForRemis (src) {
-
-    src = src.split("")
 
     for (let i=0; i<src.length; i++) {
 
@@ -76,6 +101,10 @@ function checkForInvalid (src) {
     let x = 0
     let o = 0
 
+    if (src.length!==9) {
+    	return true
+    }
+
     for (let i=0; i<src.length; i++) {
 
         if (src[i]==="x") {
@@ -87,7 +116,13 @@ function checkForInvalid (src) {
             return true
         }
 
-        if ()
+        if (i===src.length-1) {
+			if (x<o) {
+				return true
+			} else if (x>o+1) {
+				return true
+			}
+        }
 
     }
 
