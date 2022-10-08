@@ -88,3 +88,15 @@ a {
 	color: blue;
 
 }
+
+
+#console {
+
+	width: 1665px;
+	bottom: 0;
+  	right: 0;
+	position: fixed;
+	height: 1000px;
+	background-color: #222222;
+
+}
