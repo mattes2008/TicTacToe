@@ -2,6 +2,7 @@
 
 <head>
 
+    <script src="js/console.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/ai.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -140,6 +141,22 @@
     <button onclick="selectSettings ()" style="background-color: blue; color: white;">Select</button>
 
     <br/>
+
+</div>
+
+<div id="console" class="hidden">
+
+    <div class="logLine" id="logLine8" style="bottom: 50em;"></div>
+    <div class="logLine" id="logLine7" style="bottom: 45em;"></div>
+    <div class="logLine" id="logLine6" style="bottom: 40em;"></div>
+    <div class="logLine" id="logLine5" style="bottom: 35em;"></div>
+    <div class="logLine" id="logLine4" style="bottom: 30em;"></div>
+    <div class="logLine" id="logLine3" style="bottom: 25em;"></div>
+    <div class="logLine" id="logLine2" style="bottom: 20em;"></div>
+    <div class="logLine" id="logLine1" style="bottom: 15em;"></div>
+    <div class="logLine" id="logLine0" style="bottom: 10em;"></div>
+
+    <input placeholder="Input" id="commandLine" style="background-color: white; position: fixed; bottom: 2em; left: 2%; width: 96%; padding-left: 1em;" onkeyup="send (event)">
 
 </div>
 

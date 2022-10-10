@@ -29,8 +29,21 @@ let data = {
     	}
 
     },
+    log: [],
 
 }
+
+
+
+
+document.addEventListener ("keyup", function (src) {
+
+	if (src.key==="Escape") {
+		document.getElementById("console").classList.toggle("hidden")
+		reloadConsole()
+	}
+
+}, false)
 
 
 
@@ -322,6 +335,64 @@ function hideAIInputs () {
 		document.getElementById("aiInput2").classList.add("hidden")
 	} else {
 		document.getElementById("aiInput2").classList.remove("hidden")
+	}
+
+}
+
+
+
+
+function send (src) {
+
+	if (src.key==="Enter") {
+		take ()
+	}
+
+}
+
+
+
+
+function take () {
+
+	let src = document.getElementById("commandLine").value
+	src = String(src)
+	//data.log.unshift("<< " + src)
+	src = src.split(" ")
+
+	let a
+
+	if (src[0]==="/win") {
+		a = win (src[1])
+	} else if (src[0]==="/remis") {
+		a = remis(src[1])
+	} else if (src[0]==="/invalid") {
+		a = invalid(src[1])
+	} else if (src[0]==="/export") {
+		a = exportField()
+	} else if (src[0]==="/else") {
+		a = other(src[1])
+	} else {
+		a = "unknown command"
+	}
+
+	data.log.unshift(">> " + " " + a)
+	document.getElementById("commandLine").value = ""
+	reloadConsole()
+
+}
+
+
+
+
+function reloadConsole () {
+
+	for (let i=0; i<9; i++) {
+
+		if (data.log[i]!==undefined) {
+			document.getElementById("logLine" + i).innerHTML = data.log[i]
+		}
+
 	}
 
 }
