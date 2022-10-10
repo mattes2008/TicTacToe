@@ -36,13 +36,19 @@ function checkForWinIndex(src) {
 
         }
 
-        if (winningPoints1===3) {
-            return "x"
+         if (winningPoints1===3) {
             winsX++
         } else if (winningPoints2===3) {
-            return "o"
             winsO++
-        } else if (i===data.winning.length-1) {
+        }
+
+        if (i===data.winning.length-1) {
+
+			if (src[0]==="x" && src[2]==="x" && src[4]==="x" && src[6]==="x" && src[8]==="x") {
+				return "x"
+			} else if (src[1]==="x" && src[3]==="x" && src[4]==="x" && src[5]==="x" && src[7]==="x") {
+				return "x"
+			}
 
             if (winsX>1) {
             	winsX = 1
@@ -53,14 +59,22 @@ function checkForWinIndex(src) {
             }
 
             if ((winsX+winsO)>1) {
-				//return "invalid"
-				throw new Error("invalid state")
-            } else if (checkForRemis(src)){
-				return "remis"
+					throw new Error("invalid state")
 			} else {
-				throw new Error("no winner found")
+
+				if (winsX>winsO) {
+					return "x"
+				} else if (winsO>winsX) {
+					return "o"
+				} else if (checkForRemis(src)) {
+						return "remis"
+				} else {
+					throw new Error("no winner found")
+				}
 			}
-        }
+
+		}
+
 
     }
 
