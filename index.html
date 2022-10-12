@@ -5,7 +5,7 @@
     <script src="js/console.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/ai.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link id="stylesheet" rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe</title>
 
 </head>
@@ -109,7 +109,6 @@
 
     <br/>
     <br/>
-    <br/>
 
     <input id="nameInput2" placeholder=" Enter name of player 2 ...">
 
@@ -135,10 +134,21 @@
 
     <br/>
     <br/>
+
+    <button onclick="selectSettings ()" style="background-color: blue; color: white;">Select</button>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <br/>
     <br/>
 
-    <button onclick="selectSettings ()" style="background-color: blue; color: white;">Select</button>
+    <select id="styleInput" onchange="selectStyle(this.value)">
+        <option value="css/style.css">Dark (Default)</option>
+        <option value="css/style_light.css">Light</option>
+
+    </select>
 
     <br/>
 
@@ -156,7 +166,7 @@
     <div class="logLine" id="logLine1" style="bottom: 15em;"></div>
     <div class="logLine" id="logLine0" style="bottom: 10em;"></div>
 
-    <input placeholder="Input" id="commandLine" style="background-color: white; position: fixed; bottom: 2em; left: 2%; width: 96%; padding-left: 1em;" onkeyup="send (event)">
+    <input placeholder="Input" id="commandLine" style="color: black; background-color: white; position: fixed; bottom: 2em; left: 2%; width: 96%; padding-left: 1em;" onkeyup="send (event)">
 
 </div>
 

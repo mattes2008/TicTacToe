@@ -1,0 +1,122 @@
+body {
+
+    background-color: white;
+    font-family: "Arial";
+    text-align: center;
+    color: black;
+    width: 1665px;
+
+}
+
+
+
+
+td {
+
+    background-color: #CCCCCC;
+    width: 300px;
+    height: 300px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 200px;
+
+}
+
+
+.display {
+
+	background-color: #444444;
+	border: thin solid #333333;
+	color: white;
+	width: 1500px;
+	margin-left: 4.5%;
+
+}
+
+
+.displayText {
+
+	font-size: 50px;
+
+}
+
+
+.heading {
+
+	text-align: left;
+	background-color: blue;
+	color: white;
+
+}
+
+
+.hidden {
+
+	display: none;
+	visibility: hidden;
+
+}
+
+
+button, input, select {
+
+	height: 30px;
+	width: 500px;
+	color: white;
+	background-color: #CCCCCC;
+
+}
+
+
+header {
+
+    background-color: blue;
+    color: white;
+    font-family: "Arial";
+    text-align: left;
+    font-weight: bold;
+    border: thin solid blue;
+    font-size: 100%;
+    margin: 0em 0em 0em 0em;
+    padding-left: 30px;
+
+}
+
+
+a {
+
+	color: blue;
+
+}
+
+
+#console {
+
+	width: 1665px;
+	height: 1000px;
+	bottom: 0;
+  	left: 0;
+	position: fixed;
+	height: 1000px;
+	background-color: #222222;
+	opacity: 90%;
+
+}
+
+
+.logLine {
+
+	background-color: #222222;
+	color: white;
+	text-align: left;
+	position: fixed;
+	bottom: 10em;
+	left: 2%;
+	width: 96%;
+	height: 30px;
+	font-size: 16px;
+	font-family: "Arial";
+	font-weight: bold;
+
+}

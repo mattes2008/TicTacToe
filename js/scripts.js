@@ -41,6 +41,7 @@ document.addEventListener ("keyup", function (src) {
 	if (src.key==="Escape") {
 		document.getElementById("console").classList.toggle("hidden")
 		reloadConsole()
+		document.getElementById("commandLine").select()
 	}
 
 }, false)
@@ -372,6 +373,20 @@ function take () {
 		a = exportField()
 	} else if (src[0]==="/else") {
 		a = other(src[1])
+	} else if (src[0]==="/reset") {
+		restart()
+		a = "restart game"
+	} else if (src[0]==="/style") {
+		if (src[1]==="dark") {
+			selectStyle("css/style.css")
+			document.getElementById("styleInput").value = "css/style.css"
+		} else if (src[1]==="light") {
+			selectStyle("css/style_light.css")
+			document.getElementById("styleInput").value = "css/style_light.css"
+		} else if (src[1]==="hidden") {
+			selectStyle("css/style_hidden.css")
+		}
+		a = src[1]
 	} else {
 		a = "unknown command"
 	}
@@ -394,5 +409,14 @@ function reloadConsole () {
 		}
 
 	}
+
+}
+
+
+
+
+function selectStyle (href) {
+
+	document.getElementById("stylesheet").setAttribute("href", href)
 
 }
