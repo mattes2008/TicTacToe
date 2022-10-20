@@ -1,4 +1,4 @@
-<img src="https://github.com/mattes2008/TicTacToe/blob/master/storage/socialPreview.png" align="center" width="1280" height="550">
+<img src="https://github.com/mattes2008/TicTacToe/blob/master/storage/socialPreview.png" align="center" width="1280" height="500">
 
 # TicTacToe
 
