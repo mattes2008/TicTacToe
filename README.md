@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/mattes2008/TicTacToe/blob/master/storage/socialPreview.png" width="200" height="165">
+</p>
+
 # TicTacToe
 
 Tic Tac Toe is my first public project on GitHub. I used HTML, JavaScript and CSS to create a simple Tic Tac Toe-computer.
