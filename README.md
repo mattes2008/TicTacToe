@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/mattes2008/TicTacToe/blob/master/storage/socialPreview.png" width="1280" height="500">
+    <img src="https://github.com/mattes2008/TicTacToe/blob/master/storage/socialPreview.png" width="1280" height="655">
 </p>
 
 # TicTacToe
