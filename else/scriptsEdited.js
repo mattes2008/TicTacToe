@@ -81,7 +81,7 @@ function checkForWinIndex(src) {
 }
 
 
-function checkForWin(src) {
+export function checkForWin(src) {
     try {
     	let a = checkForWinIndex(src);
     	return a
